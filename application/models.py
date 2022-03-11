@@ -13,13 +13,14 @@ class Units(db.Model):
     attacks = db.Column(db.Integer)
     leadership = db.Column(db.Integer)
     armour_save = db.Column(db.Integer)
+    army_id = db.Column(db.Integer, db.ForeignKey('army.pk'))
     def __str__(self):
         return f"Name: {self.unit_name}, power rating: {self.power_rating}, movement: {self.movement}, weapon skill: {self.weapon_skill}, ballistic skill: {self.ballistic_skill}, strength: {self.strength}, toughness: {self.toughness}, wounds: {self.wounds}, attacks: {self.attacks}, leadership: {self.leadership}, armour save: {self.armour_save}"
 
 class Army(db.Model):
     pk = db.Column(db.Integer, primary_key = True)
     name = db.Column(db.String(50))
-    proj_items = db.relationship('Units', backref='Army')
+    army_items = db.relationship('Units', backref='army')
     def __str__(self):
         return f"{self.name}"
 

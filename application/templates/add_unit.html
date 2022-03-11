@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+{% block body %}
+<h2>Add Unit</h2>
+<br>
+<div class="form">
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <br>
+        {{ form.unit_name.label }} {{ form.unit_name }}
+        <br>
+        {{ form.power_rating.label }} {{ form.power_rating }}
+        <br>
+        {{ form.movement.label }}  {{ form.movement }}
+        <br>
+        {{ form.weapon_skill.label }}  {{ form.weapon_skill }}
+        <br>
+        {{ form.ballistic_skill.label }}  {{ form.ballistic_skill }}
+        <br>
+        {{ form.strength.label }}  {{ form.strength }}
+        <br>
+        {{ form.toughness.label }}  {{ form.toughness }}
+        <br>
+        {{ form.wounds.label }}  {{ form.wounds }}
+        <br>
+        {{ form.attacks.label }}  {{ form.attacks }}
+        <br>
+        {{ form.leadership.label }}  {{ form.leadership }}
+        <br>
+        {{ form.armour_save.label }}  {{ form.armour_save }}
+        <br>
+        {{ form.army_id.label }} {{ form.army_id }} 
+        <br>
+        {{ form.submit }}
+    </form>
+</div>
+{% endblock body %}

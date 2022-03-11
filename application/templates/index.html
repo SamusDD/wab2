@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% block body %}
+        <h2>Home</h2>
+        {% if num == 0 %}
+        <p>You have no units listed</p>
+        {% else %}
+        <p>You have {{ num }} units listed</p>
+        {% endif %}
+        {% for unit in units %}
+        {{ unit }}
+        <br>
+        {% endfor %}
+{% endblock body %}
